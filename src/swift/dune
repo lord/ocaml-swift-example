@@ -1,0 +1,12 @@
+(rule
+ (targets libblah.a)
+ (deps
+  (glob_files *.h)
+  (glob_files *.swift)
+  (source_tree ./lib))
+ (action
+  (progn
+   (run
+    sh
+    -c
+    "swiftc -import-objc-header bridge.h *.swift -emit-library -static -o libblah.a -I/Users/lord/.opam/default/lib/ocaml"))))

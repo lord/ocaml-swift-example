@@ -1,0 +1,16 @@
+(library
+ (name ocaml_swift_example)
+ (libraries core)
+ (inline_tests)
+ (foreign_stubs
+  (language c)
+  (names bridge)
+  (flags))
+ (preprocess
+  (pps ppx_jane))
+ (foreign_archives "./swift/blah" "../boxroot/boxroot")
+ (c_library_flags
+  ;  add [-framework] flags to import Swift libraries here
+  (-lc -L/usr/lib/swift -mmacosx-version-min=14.0)))
+
+(include_subdirs unqualified)
