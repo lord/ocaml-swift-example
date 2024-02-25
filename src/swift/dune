@@ -7,6 +7,6 @@
  (action
   (progn
    (run
-    sh
+    bash
     -c
-    "swiftc -import-objc-header bridge.h *.swift -emit-library -static -o libblah.a -I/Users/lord/.opam/default/lib/ocaml"))))
+    "swiftc -import-objc-header bridge.h *.swift -emit-library -static -o libblah.a -I/Users/$(whoami)/.opam/default/lib/ocaml"))))
